@@ -20,6 +20,7 @@ var config = {
     ],
     js: './src/**/*.js',
     mainJs: './src/main.js',
+    images: '.src/images/*',
     dist: './dist'
   }
 };
@@ -61,6 +62,12 @@ gulp.task('css', function(){
     .pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
+gulp.task('images', function(){
+  gulp.src(config.paths.images)
+    .pipe(gulp.dest(config.paths.dist + '/images'))
+    .pipe(connect.reload());
+});
+
 gulp.task('lint', function(){
   return gulp.src(config.paths.js)
     .pipe(lint())
@@ -68,9 +75,11 @@ gulp.task('lint', function(){
     .pipe(lint.failAfterError());
 });
 
+gulp
+
 gulp.task('watch', function(){
   gulp.watch(config.paths.html, ['html']);
   gulp.watch(config.paths.js, ['js', 'lint']);
 });
 
-gulp.task('default', ['html', 'css', 'js', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'css', 'js', 'lint', 'images', 'open', 'watch']);
