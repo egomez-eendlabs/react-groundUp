@@ -1,6 +1,9 @@
 'use strict';
 
 var React = require('react');
+var ReactRouter = require('react-router');
+var hashHistory = ReactRouter.hashHistory;
+
 var AuthorForm = require('./authorForm');
 var AuthorApi = require('../../api/authorApi');
 
@@ -11,8 +14,10 @@ var ManageAuthorPage = React.createClass({
     };
   },
   
-  saveAuthor: function(){
+  saveAuthor: function(event){
+    event.preventDefault();
     AuthorApi.saveAuthor(this.state.author);
+    hashHistory.push('authors');
   },
   
   setAuthorState: function(event){
