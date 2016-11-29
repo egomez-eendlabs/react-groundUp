@@ -24,7 +24,9 @@ var AppRoutes = React.createClass({
           <IndexRoute component={HomePage}></IndexRoute>
           <Route path="home" component={HomePage}></Route>
           <Route path="authors" component={AuthorPage}></Route>
-          <Route path="author" component={ManageAuthorPage}></Route>
+          <Route path="author" component={ManageAuthorPage}>
+            <Route path=":id" component={ManageAuthorPage}></Route>  
+          </Route>
           <Route path="about" component={AboutPage}></Route>
           <Redirect from="awuthors" to="authors"></Redirect>
           <Redirect from="awthors" to="authors"></Redirect>
