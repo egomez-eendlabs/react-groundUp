@@ -20,12 +20,12 @@ var AppRoutes = React.createClass({
   render: function(){
     return (
       <Router history={browserHistory}>
-        <Route name="app" path="/" component={App}>
+        <Route path="/" component={App}>
           <IndexRoute component={HomePage}></IndexRoute>
-          <Route name="home" path="/home" component={HomePage}></Route>
-          <Route name="authors" path="/authors" component={AuthorPage}></Route>
-          <Route name="addAuthor" path="author" component={ManageAuthorPage}></Route>
-          <Route name="about" path="/about" component={AboutPage}></Route>
+          <Route path="home" component={HomePage}></Route>
+          <Route path="authors" component={AuthorPage}></Route>
+          <Route path="author" component={ManageAuthorPage}></Route>
+          <Route path="about" component={AboutPage}></Route>
           <Redirect from="awuthors" to="authors"></Redirect>
           <Redirect from="awthors" to="authors"></Redirect>
           <Redirect from="about-us" to="about"></Redirect>
