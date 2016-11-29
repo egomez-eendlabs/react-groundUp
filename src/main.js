@@ -5,8 +5,9 @@ $ = jQuery = require('jquery');
   
   var React = require('react');
   var ReactDOM = require('react-dom');
-  var Home = require('./components/home-page');
-  var About = require('./components/about/about-page');
+  var Home = require('./components/homePage');
+  var About = require('./components/about/aboutPage');
+  var Header = require('./components/common/header');
 
   var App = React.createClass({
       render: function() {
@@ -18,6 +19,7 @@ $ = jQuery = require('jquery');
           }
           return (
             <div>
+              <Header/>
               <Child/>
             </div>
           );
@@ -26,7 +28,6 @@ $ = jQuery = require('jquery');
 
   function render(){
     var route = win.location.hash.substr(1);
-    console.log(route);
     ReactDOM.render(<App route = {route} />, document.getElementById('app'));
   }
 
