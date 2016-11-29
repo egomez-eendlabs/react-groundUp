@@ -12,6 +12,7 @@ var HomePage = require('./components/homePage');
 var AuthorPage = require('./components/authors/authorPage');
 var AboutPage = require('./components/about/aboutPage');
 var Header = require('./components/common/header');
+var NotFoundPage = require('./components/notFoundPage');
 
 var AppRoutes = React.createClass({
   render: function(){
@@ -22,6 +23,7 @@ var AppRoutes = React.createClass({
           <Route name="home" path="/home" component={HomePage}></Route>
           <Route name="authors" path="/authors" component={AuthorPage}></Route>
           <Route name="about" path="/about" component={AboutPage}></Route>
+          <Route path="*" component={NotFoundPage}></Route>
         </Route>
       </Router>
     );
