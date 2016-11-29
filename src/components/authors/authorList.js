@@ -4,7 +4,7 @@ var React = require('react');
 
 var AuthorList = React.createClass({
   propTypes: {
-    authors: React.PropTyes.arrays.isRequired
+    authors: React.PropTypes.array.isRequired
   },
   
   render: function(){
@@ -20,7 +20,6 @@ var AuthorList = React.createClass({
     
     return (
       <div>
-        <h1>Authors</h1>
         <table className="table">
           <thead>
             <tr>
@@ -30,7 +29,7 @@ var AuthorList = React.createClass({
             </tr>
           </thead>
           <tbody>
-            {this.prop.authors.map(renderAuthorRow, this)}
+            {this.props.authors.map(renderAuthorRow, this)}
           </tbody>
         </table>
       </div>
