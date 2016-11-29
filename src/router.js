@@ -6,6 +6,7 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
+var Redirect = ReactRouter.Redirect;
 
 var App = require('./components/app');
 var HomePage = require('./components/homePage');
@@ -23,6 +24,10 @@ var AppRoutes = React.createClass({
           <Route name="home" path="/home" component={HomePage}></Route>
           <Route name="authors" path="/authors" component={AuthorPage}></Route>
           <Route name="about" path="/about" component={AboutPage}></Route>
+          <Redirect from="awuthors" to="authors"></Redirect>
+          <Redirect from="awthors" to="authors"></Redirect>
+          <Redirect from="about-us" to="about"></Redirect>
+          <Redirect from="about/*" to="about"></Redirect>
           <Route path="*" component={NotFoundPage}></Route>
         </Route>
       </Router>
