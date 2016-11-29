@@ -20,7 +20,7 @@ var config = {
     ],
     js: './src/**/*.js',
     mainJs: './src/main.js',
-    images: '.src/images/*',
+    images: './src/images/pluralsight-logo.png',
     dist: './dist'
   }
 };
@@ -74,8 +74,6 @@ gulp.task('lint', function(){
     .pipe(lint.format())
     .pipe(lint.failAfterError());
 });
-
-gulp
 
 gulp.task('watch', function(){
   gulp.watch(config.paths.html, ['html']);
