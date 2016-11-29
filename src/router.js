@@ -4,7 +4,7 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
-var hashHistory = ReactRouter.hashHistory;
+var browserHistory = ReactRouter.browserHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 var Redirect = ReactRouter.Redirect;
 
@@ -18,7 +18,7 @@ var NotFoundPage = require('./components/notFoundPage');
 var AppRoutes = React.createClass({
   render: function(){
     return (
-      <Router history={hashHistory}>
+      <Router history={browserHistory}>
         <Route name="app" path="/" component={App}>
           <IndexRoute component={HomePage}></IndexRoute>
           <Route name="home" path="/home" component={HomePage}></Route>
