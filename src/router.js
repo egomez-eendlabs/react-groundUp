@@ -4,7 +4,7 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
-var browserHistory = ReactRouter.browserHistory;
+var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 var Redirect = ReactRouter.Redirect;
 
@@ -19,7 +19,7 @@ var ManageAuthorPage = require('./components/authors/manageAuthorPage');
 var AppRoutes = React.createClass({
   render: function(){
     return (
-      <Router history={browserHistory}>
+      <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={HomePage}></IndexRoute>
           <Route path="home" component={HomePage}></Route>
