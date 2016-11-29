@@ -19,9 +19,9 @@ var AppRoutes = React.createClass({
       <Router history={hashHistory}>
         <Route name="app" path="/" component={App}>
           <IndexRoute component={HomePage}></IndexRoute>
-          <Route path="/home" component={HomePage}></Route>
-          <Route path="/authors" component={AuthorPage}></Route>
-          <Route path="/about" component={AboutPage}></Route>
+          <Route name="home" path="/home" component={HomePage}></Route>
+          <Route name="authors" path="/authors" component={AuthorPage}></Route>
+          <Route name="about" path="/about" component={AboutPage}></Route>
         </Route>
       </Router>
     );
