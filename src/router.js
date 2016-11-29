@@ -14,6 +14,7 @@ var AuthorPage = require('./components/authors/authorPage');
 var AboutPage = require('./components/about/aboutPage');
 var Header = require('./components/common/header');
 var NotFoundPage = require('./components/notFoundPage');
+var ManageAuthorPage = require('./components/authors/manageAuthorPage');
 
 var AppRoutes = React.createClass({
   render: function(){
@@ -23,6 +24,7 @@ var AppRoutes = React.createClass({
           <IndexRoute component={HomePage}></IndexRoute>
           <Route name="home" path="/home" component={HomePage}></Route>
           <Route name="authors" path="/authors" component={AuthorPage}></Route>
+          <Route name="addAuthor" path="author" component={ManageAuthorPage}></Route>
           <Route name="about" path="/about" component={AboutPage}></Route>
           <Redirect from="awuthors" to="authors"></Redirect>
           <Redirect from="awthors" to="authors"></Redirect>
