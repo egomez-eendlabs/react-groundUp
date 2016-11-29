@@ -6,6 +6,7 @@ var hashHistory = ReactRouter.hashHistory;
 
 var AuthorForm = require('./authorForm');
 var AuthorApi = require('../../api/authorApi');
+var toastr = require('toastr');
 
 var ManageAuthorPage = React.createClass({
   getInitialState: function(){
@@ -17,6 +18,7 @@ var ManageAuthorPage = React.createClass({
   saveAuthor: function(event){
     event.preventDefault();
     AuthorApi.saveAuthor(this.state.author);
+    toastr.success('Author saved!');
     hashHistory.push('authors');
   },
   
