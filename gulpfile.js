@@ -71,8 +71,7 @@ gulp.task('images', function(){
 gulp.task('lint', function(){
   return gulp.src(config.paths.js)
     .pipe(lint())
-    .pipe(lint.format())
-    .pipe(lint.failAfterError());
+    .pipe(lint.format());
 });
 
 gulp.task('watch', function(){
