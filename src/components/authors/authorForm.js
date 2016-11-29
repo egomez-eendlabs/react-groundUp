@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var TextInput = require('../common/textInput')
+var TextInput = require('../common/textInput');
 
 var AuthorForm = React.createClass({
   render: function(){
@@ -21,7 +21,8 @@ var AuthorForm = React.createClass({
             onChange={this.props.onChange}
             />
         
-        <input type="submit" value="save" className="btn btn-default"/>
+        <input type="submit" value="save" className="btn btn-default" 
+          onClick={this.props.onSave}/>
       </form>
     );
   }
