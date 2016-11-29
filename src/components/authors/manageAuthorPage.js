@@ -9,10 +9,20 @@ var AuthorApi = require('../../api/authorApi');
 var toastr = require('toastr');
 
 var ManageAuthorPage = React.createClass({
+  componentDidMount: function(){
+    var self = this;
+    this.props.router.setRouteLeaveHook(this.props.route, function() {
+      if (self.state.dirty){
+        return 'You have unsaved information, are you sure you want to leave this page?';
+      }
+    });
+  },
+  
   getInitialState: function(){
     return {
       author : {id: '', firstName: '', lastName: ''},
-      errors: {}
+      errors: {},
+      dirty: false
     };
   },
   
@@ -42,11 +52,13 @@ var ManageAuthorPage = React.createClass({
     }
     
     AuthorApi.saveAuthor(this.state.author);
+    this.setState({dirty: false});
     toastr.success('Author saved!');
     hashHistory.push('authors');
   },
   
   setAuthorState: function(event){
+    this.setState({dirty: true});
     var field = event.target.name;
     var value = event.target.value;
     this.state.author[field] = value;
