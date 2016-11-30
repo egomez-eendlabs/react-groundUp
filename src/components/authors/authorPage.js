@@ -24,7 +24,7 @@ var AuthorPage = React.createClass({
   
   //clean up when this component is unmounted
   componentWillUnmount: function(){
-    AuthorStores.removeListener(this._onChange);
+    AuthorStores.removeChangeListener(this._onChange);
   },
   
   render: function(){
