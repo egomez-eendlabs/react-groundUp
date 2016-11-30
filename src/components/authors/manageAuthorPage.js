@@ -60,6 +60,11 @@ var ManageAuthorPage = React.createClass({
       return;
     }
     
+    if(this.state.dirty === false){
+      hashHistory.push('authors');
+      return;
+    }
+    
     if(this.state.author.id){
       AuthorActions.updateAuthor(this.state.author);
     }else{
