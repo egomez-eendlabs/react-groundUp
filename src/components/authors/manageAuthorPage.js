@@ -61,14 +61,15 @@ var ManageAuthorPage = React.createClass({
     }
     
     AuthorActions.createAuthor(this.state.author);
-    debugger;
-    this.setState({dirty: false});
+    this.state.dirty = false;
+    this.setState({dirty: this.state.dirty});
     toastr.success('Author saved!');
     hashHistory.push('authors');
   },
   
   setAuthorState: function(event){
-    this.setState({dirty: true});
+    this.state.dirty = true;
+    this.setState({dirty: this.state.dirty});
     var field = event.target.name;
     var value = event.target.value;
     this.state.author[field] = value;
