@@ -3,6 +3,7 @@
 //This file is mocking a web API by hitting hard coded data.
 var authors = require('./authorData').authors;
 var _ = require('lodash');
+var remove = require('lodash.remove');
 
 //This would be performed on the server in a real app. Just stubbing in.
 var _generateId = function(author) {
@@ -43,7 +44,7 @@ var AuthorApi = {
 
 	deleteAuthor: function(id) {
 		console.log('Pretend this just deleted the author from the DB via an AJAX call...');
-		_.remove(authors, { id: id});
+		remove(authors, { id: id});
 	}
 };
 

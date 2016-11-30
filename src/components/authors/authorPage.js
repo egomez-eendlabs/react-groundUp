@@ -15,17 +15,17 @@ var AuthorPage = React.createClass({
   },
   
   _onChange: function(){
-    this.setState({authors: AuthorApi.getAllAuthors()});
+    this.setState({authors: AuthorStores.getAllAuthors()});
   },
   
   componentWillMount: function(){
     AuthorStores.addChageListener(this._onChange);
-  }
+  },
   
   //clean up when this component is unmounted
   componentWillUnmount: function(){
     AuthorStores.removeListener(this._onChange);
-  }
+  },
   
   render: function(){
     return (
